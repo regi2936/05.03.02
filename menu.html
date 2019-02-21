@@ -5,17 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Roma</title>
+
     <style>
-        body {}
+        body {
+            width: 100%;
+            margin: 0;
+            background-image: url(imgs/Wood-Background.jpg);
+
+        }
 
         #liste {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            /* display: grid;
+            grid-template-columns: 1fr 1fr 1fr;*/
             width: 100vw;
             margin-bottom: 5vw;
             margin-top: 5vw;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
 
         }
+
 
         img {
             width: 300px;
@@ -30,7 +41,11 @@
 
         h2 {}
 
-        h1 {}
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+        }
 
         .menu {
             text-align: center;
@@ -38,27 +53,48 @@
             background-color: rgba(255, 250, 248, 0.57);
         }
 
+        .visteRetter {
+            border-bottom: 1px #9a9a9a solid;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(244, 247, 255, 0.38);
+            text-align: center;
+            width: 400px;
+            border-radius: 5px;
+            color: white;
+
+        }
+
         #popup {
 
             width: 100vw;
-            height: 60vw;
+            height: 60%;
             position: fixed;
             display: none;
             background-color: white;
 
         }
 
-        #indhold {}
+        #indhold {
+            text-align: center;
+            margin: 15px;
+        }
 
-        button {}
+        button {
+
+        }
+
     </style>
+
 </head>
 
 <body>
+
     <div id="popup">
         <div id="indhold"></div>
         <button id="luk">X</button>
     </div>
+
     <h1>Menu</h1>
 
     <nav class="menu">
@@ -67,7 +103,6 @@
         <button class="filter" data-ret="hovedretter">Hovedret</button>
         <button class="filter" data-ret="desserter">Dessert</button>
         <button class="filter" data-ret="drikkevarer">Drikkevarer</button>
-        <button class="filter" data-ret="sideorders">Sideorders</button>
     </nav>
 
     <div id="liste"></div>
@@ -129,7 +164,7 @@
             })
 
             function filtrering() {
-                filter = this.getAttribute("data-hold");
+                filter = this.getAttribute("data-ret");
                 document.querySelector("h1").textContent = this.textContent;
 
                 document.querySelectorAll(".filter").forEach(elm => {
@@ -146,6 +181,7 @@
 
 
         }
+
     </script>
 </body>
 
