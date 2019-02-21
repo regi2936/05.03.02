@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Roma</title>
+    <style>
+        body {}
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100vw;
+            margin-bottom: 5vw;
+            margin-top: 5vw;
+
+        }
+
+        img {
+            width: 300px;
+            margin: 2vw;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        p {}
+
+        h2 {}
+
+        h1 {}
+
+        .menu {
+            text-align: center;
+            padding: 10px 10px;
+            background-color: rgba(255, 250, 248, 0.57);
+        }
+
+        #popup {
+
+            width: 100vw;
+            height: 60vw;
+            position: fixed;
+            display: none;
+
+        }
+
+        #indhold {}
+
+        button {}
+
+    </style>
+</head>
+
+<body>
+    <div id="popup">
+        <div id="indhold"></div>
+        <button id="luk">X</button>
+    </div>
+    <h1>Menu</h1>
+
+    <nav class="menu">
+        <button class="filter valgt" data-hold="alle">Menu</button>
+        <button class="filter" data-hold="forretter">Forret</button>
+        <button class="filter" data-hold="hovedretter">Hovedret</button>
+        <button class="filter" data-hold="desserter">Dessert</button>
+        <button class="filter" data-hold="drikkevarer">Drikkevarer</button>
+        <button class="filter" data-hold="sideorders">Sideorders</button>
+    </nav>
+
+    <div id="liste"></div>
+
+    <script>
+        let retter = [];
+        let dest = document.querySelector("#liste");
+        let filter = "alle";
+
+
+        document.addEventListener("DOMContentLoaded", sidenVises);
+
+        function sidenVises() {
+
+            async function getJson() {
+                console.log("JSON hentes");
+                let jsonData = await fetch("retter.json");
+                retter = await jsonData.json();
+                retter.sort((a, b) => {
+                    return b.kategori.localeCompare(a.kategori);
+                })
+
+                visRetter();
+            }
+
+            function visRetter() {
+                dest.innerHTML = "";
+                retter.forEach(ret => {
+                    if (filter == "alle" || filter == ret.kategori) {
+                        let template = `
+                    <div class="visteRetter">
+                           <h2>${ret.navn}</h2>
+                            <div> <img src="imgs/${ret.billede}.jpg"> </div>
+                            <p>Pris: ${ret.pris}</p>
+                    </div>`;
+
+                        dest.insertAdjacentHTML("beforeend", template);
+                        dest.lastElementChild.addEventListener("click", open);
+
+                        function open() {
+                            document.querySelector("#indhold").innerHTML =
+                                `<h2>${ret.navn}</h2>
+                            <p>Oprindelse: ${ret.beskrivelse}</p>
+                            <div> <img src="imgs/${ret.billede}.jpg"> </div>
+                            <p>Pris: ${ret.pris}</p>`;
+
+                            document.querySelector("#popup").style.display = "block";
+                        }
+                    };
+                })
+            }
+
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
+
+            document.querySelector("#luk").addEventListener("click", () => {
+                document.querySelector("#popup").style.display = "none";
+            })
+
+            function filtrering() {
+                filter = this.getAttribute("data-hold");
+                document.querySelector("h1").textContent = this.textContent;
+
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                })
+                this.classList.add("valgt");
+
+                visRetter();
+            }
+
+
+            getJson();
+            console.log("json");
+
+
+        }
+
+    </script>
+</body>
+
+</html>
