@@ -44,13 +44,13 @@
             height: 60vw;
             position: fixed;
             display: none;
+            background-color: white;
 
         }
 
         #indhold {}
 
         button {}
-
     </style>
 </head>
 
@@ -62,12 +62,12 @@
     <h1>Menu</h1>
 
     <nav class="menu">
-        <button class="filter valgt" data-hold="alle">Menu</button>
-        <button class="filter" data-hold="forretter">Forret</button>
-        <button class="filter" data-hold="hovedretter">Hovedret</button>
-        <button class="filter" data-hold="desserter">Dessert</button>
-        <button class="filter" data-hold="drikkevarer">Drikkevarer</button>
-        <button class="filter" data-hold="sideorders">Sideorders</button>
+        <button class="filter valgt" data-ret="alle">Menu</button>
+        <button class="filter" data-ret="forretter">Forret</button>
+        <button class="filter" data-ret="hovedretter">Hovedret</button>
+        <button class="filter" data-ret="desserter">Dessert</button>
+        <button class="filter" data-ret="drikkevarer">Drikkevarer</button>
+        <button class="filter" data-ret="sideorders">Sideorders</button>
     </nav>
 
     <div id="liste"></div>
@@ -146,7 +146,6 @@
 
 
         }
-
     </script>
 </body>
 
