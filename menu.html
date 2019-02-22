@@ -30,7 +30,6 @@
 
         }
 
-
         .visteRetter img {
             width: 300px;
             margin: 2vw;
@@ -57,6 +56,8 @@
             padding: 10px 10px;
             background-color: rgba(255, 250, 248, 0.57);
         }
+
+
 
         .visteRetter {
             border-bottom: 1px #9a9a9a solid;
@@ -90,36 +91,109 @@
 
         }
 
-        button {}
+        button {
 
+            font-family: 'Montserrat', sans-serif;
+            padding: 10px;
+            background-color: white;
+            margin: 5px;
+            font-size: 1rem;
+            border: none;
 
-        @media screen and (min-width: 700px) {
-            #liste {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                width: 100vw;
-                margin-bottom: 5vw;
-                margin-top: 5vw;
-                text-align: center;
-                align-content: center;
-            }
 
         }
 
-        @media screen and (min-width: 200px) {
+
+
+        /**********************************************/
+
+        #menuknap {
+            display: block;
+            text-align: left;
+            font-size: 3rem;
+            font-family: 'helvetica', sans-serif;
+            cursor: pointer;
+            color: white;
+            padding: 10px 0;
+        }
+
+        #menuknap_front {
+            color: black;
+            display: block;
+            text-align: left;
+            font-size: 3rem;
+            font-family: 'helvetica', sans-serif;
+            cursor: pointer;
+            padding: 10px 0;
+        }
+
+        #menu {
+            transition: transform 0.3s;
+            list-style-type: none;
+            transform-origin: top left;
+            background-color: rgba(252, 252, 252, 0.87);
+            width: 300px;
+            text-align: left;
+            padding-bottom: 20px;
+        }
+
+        #burger {
+            width: 200px;
+            z-index: 2;
+        }
+
+        #menu li {
+            padding-top: 30px;
+            display: block;
+            text-align: left;
+        }
+
+        #menu a {
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            color: gray;
+
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+        /**********************************************/
+        @media screen and (max-width: 500px) {
 
             .menu {
-
                 display: none;
             }
 
         }
 
+        @media screen and (min-width: 500px) {
+
+            #burger {
+                display: none;
+            }
+
+        }
+
+        /**********************************************/
     </style>
 
 </head>
 
 <body>
+
+    <nav id="burger">
+        <div id="menuknap">☰</div>
+        <ul id="menu" class="hidden">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="menukort.html">Menukort</a></li>
+            <li><a href="vinkort.html">Vinkort</a></li>
+            <li><a href="info.html">Informationer</a></li>
+        </ul>
+    </nav>
 
     <div id="popup">
         <div id="indhold"></div>
@@ -213,6 +287,21 @@
 
         }
 
+        document.querySelector("#menuknap").addEventListener("click", toggleMenu);
+
+        function toggleMenu() {
+            console.log("Toogle menu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
+            }
+        }
     </script>
 </body>
 
