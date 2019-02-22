@@ -32,7 +32,7 @@
     "kategori": "forretter",
     "navn": "CROSTINI MED JORDB\u00c6R OG OST",
     "pris": 100,
-    "billede": "samvirke_jordbaer_crostini",
+    "billede": "crostini",
     "beskrivelse": "B\u00e5de s\u00f8de og salte. Disse dejlige crostini med jordb\u00e6r og ost fungerer perfekt som hapsere til mousserende vin eller \u00f8l."
 }, {
     "kategori": "hovedretter",
@@ -74,7 +74,7 @@
     "kategori": "desserter",
     "navn": "PANNA COTTA MED B\u00c6R I VIN OG HONNING",
     "pris": 80,
-    "billede": "panna-cotta",
+    "billede": "panna_cotta",
     "beskrivelse": "Endnu en udgave af den italienske klassiker inden for desserter: panna cotta. Her serveret med b\u00e6r i vin og honning"
 }, {
     "kategori": "drikkevarer",

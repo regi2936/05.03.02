@@ -11,8 +11,10 @@
             width: 100%;
             margin: 0;
             background-image: url(imgs/Wood-Background.jpg);
+            background-size: contain;
 
         }
+
 
         #liste {
             /* display: grid;
@@ -28,7 +30,7 @@
         }
 
 
-        img {
+        .visteRetter img {
             width: 300px;
             margin: 2vw;
             display: block;
@@ -80,7 +82,19 @@
             margin: 15px;
         }
 
-        button {
+        button {}
+
+
+        @media screen and (min-width: 700px) {
+            #liste {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                width: 100vw;
+                margin-bottom: 5vw;
+                margin-top: 5vw;
+                text-align: center;
+                align-content: center;
+            }
 
         }
 
