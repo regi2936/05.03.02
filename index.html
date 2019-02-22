@@ -5,23 +5,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Roma</title>
+
     <style>
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            width: 300px;
-            background-image: url(imgs/Wood-Background.jpg);
+            width: 25vw;
         }
 
         li a {
             display: block;
-            padding: 8px 16px;
+            padding: 30px 30px 30px 30px;
             text-decoration: none;
             color: white;
+            font-size: 2rem;
         }
 
-        nav {}
+
+        .section_menu {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-gap: 0px;
+            grid-template-areas: "a b";
+        }
+
+        .sectionwrapper {
+            grid-area: a;
+            background-image: url(imgs/Wood-Background.jpg);
+
+        }
+
+        .sectionwrapper img {
+            grid-area: b;
+            height: 100vh;
+
+        }
+
+        .logo {
+            width: 200px;
+        }
 
     </style>
 </head>
@@ -29,67 +52,97 @@
 <body>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
 
-        <div id="splash">
+        <div class="section_menu">
 
-            <div class="slideshow-container">
+            <nav class="sectionwrapper">
 
-                <div class="mySlides fade">
-                    <img src="splash/background.jpg" style="width:100%" alt="slide">
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+
+
+            <div id="sectionwrapper">
+
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <img src="splash/background.jpg" style="width:100%" alt="slide">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="splash/2.jpg" style="width:100%" alt="slide">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="splash/3.jpg" style="width:100%" alt="slide">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="splash/4.jpg" style="width:100%" alt="slide">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="splash/5.jpg" style="width:100%" alt="slide">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="splash/6.jpg" style="width:100%" alt="slide">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="splash/7.jpg" style="width:100%" alt="slide">
+                    </div>
+
                 </div>
 
-                <div class="mySlides fade">
-                    <img src="splash/2.jpg" style="width:100%" alt="slide">
-                </div>
 
-                <div class="mySlides fade">
-                    <img src="splash/3.jpg" style="width:100%" alt="slide">
-                </div>
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
 
-                <div class="mySlides fade">
-                    <img src="splash/4.jpg" style="width:100%" alt="slide">
-                </div>
 
-                <div class="mySlides fade">
-                    <img src="splash/5.jpg" style="width:100%" alt="slide">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="splash/6.png" style="width:100%" alt="slide">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="splash/7.png" style="width:100%" alt="slide">
                 </div>
 
             </div>
-
-
-            <div style="text-align:center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-
-
-            </div>
-
         </div>
     </header>
 
 
 
     <script>
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.querySelectorAll(".mySlides");
+    let dots = document.querySelectorAll(".dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
 
     </script>
 </body>
