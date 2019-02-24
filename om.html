@@ -9,15 +9,15 @@
 
     <style>
         body {
-            width: 100%;
-            margin: 0;
+
             background-image: url(imgs/Wood-Background.jpg);
             background-size: contain;
-            align-content: center;
+            width: 100%;
+            margin: 0;
         }
 
 
-
+        /**************************BURGERMENU********************************/
         #menuknap {
             text-align: left;
             font-size: 3rem;
@@ -63,9 +63,11 @@
             display: none;
         }
 
+        /**********************************************************/
+
 
         img {
-            width: 90vw;
+            width: 95vw;
             height: auto;
             padding: 20px 20px 20px 20px;
 
@@ -80,26 +82,24 @@
         }
 
         p {
-            background-color: rgba(244, 247, 255, 0.38);
+            background-color: rgba(199, 199, 199, 0.46);
             text-align: center;
             color: white;
             font-size: 1.2rem;
             font-family: 'Montserrat', sans-serif;
             margin: 10px 10px 10px 10px;
             padding: 10px 10px 10px 10px;
-
-
         }
 
-        .logo img {
-            width: 200px;
+        #icon img {
+            width: 8vw;
             height: auto;
-            margin: 30px 30px 30px 30px;
-            position: absolute;
-            padding-left: 460px;
-
+            color: white;
+            align-content: center;
 
         }
+
+
 
         @media screen and (max-width: 600px) {
 
@@ -116,8 +116,15 @@
             #burger {
                 display: none;
             }
+        }
 
+        @media screen and (min-width: 700px) {
 
+            img {
+                width: 95vw;
+                height: auto;
+                padding: 20px 20px 20px 20px;
+            }
         }
     </style>
 
@@ -128,9 +135,7 @@
 <body>
     <header>
 
-        <div class="logo" id="hidden">
-            <img src="logo.svg" alt="">
-        </div>
+
 
         <nav id="burger">
 
@@ -143,14 +148,17 @@
             </ul>
         </nav>
 
+        <div class="info_billede">
+            <img src="imgs/image.jpg" alt="">
+        </div>
+
+
     </header>
 
 
     <div class="desc">
 
-        <div class="info_billede">
-            <img src="imgs/image.jpg" alt="">
-        </div>
+
 
         <div class="info_text">
             <h2>Med passion og nyskabelse</h2>
@@ -164,7 +172,7 @@
 
     <div id="section">
         <div class="open">
-            <img src="imgs/lokation.png" alt="kort_over_københavn">
+            <img src="imgs/kortoverkbh.jpg" alt="kort_over_københavn">
 
             <div class="open_text">
                 <h2>Åbningstider:</h2>
@@ -176,22 +184,17 @@
                     søndag: Lukket.
                 </p>
 
-                <p><strong>Adresse:</strong> Kongensgade 2D <br>
-                    3000 Helsingør</p>
+                <p><strong>Adresse:</strong> Pilestræde 12A, <br>
+                    1112 København</p>
             </div>
         </div>
     </div>
 
     <footer class="footer_info">
-        <div id="kontakt">
-            <a href="info.html">Kontakt os</a><br>
-            <p>Kongensgade 2D <br>
-                3000 Helsingør
-            </p>
-        </div>
-        <div id="some">
-            <img src="imgs/instagram.png" alt="instagram">
-            <img src="imgs/facebook.png" alt="facebook">
+
+        <div id="icon">
+            <img src="imgs/instagram-icon.png" alt="instagram">
+            <img src="imgs/facebook-icon.png" alt="facebook">
         </div>
     </footer>
     <script>
