@@ -8,22 +8,23 @@
     <title>Restaurant Roma</title>
 
     <style>
-        ul {
+        .menu ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             width: 25vw;
             background-color: rgba(255, 255, 255, 0.53);
-            height: 55vw;
+            height: 110vw;
 
         }
 
-        li a {
+        .menu li a {
             display: block;
             text-decoration: none;
             color: white;
             font-size: 2rem;
             font-family: 'Montserrat', sans-serif;
+            padding: 30px 20px 30px 30px;
         }
 
 
@@ -43,6 +44,14 @@
 
 
         }
+
+        #burger ul {
+            height: 50vw;
+            padding-top: 10vw;
+
+        }
+
+
 
 /**************************BURGERMENU********************************/
         #menuknap {
@@ -123,8 +132,9 @@
             <div id="menuknap">☰</div>
 
             <ul id="menu" class="hidden">
-                <li><a href="index.html">Forside</a></li>
+
                 <li><a href="menu.html">Menukort</a></li>
+                <li><a href="om.html">Kontakt</a></li>
                 <li><a href="om.html">Om os</a></li>
             </ul>
         </nav>
@@ -137,7 +147,7 @@
             <nav class="menu">
                 <ul>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="om.html">Kontakt</a></li>
                     <li><a href="om.html">Om os</a></li>
 
                 </ul>
