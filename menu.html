@@ -41,10 +41,6 @@
 
         }
 
-        p {}
-
-        h2 {}
-
         h1 {
             text-align: center;
             color: white;
@@ -62,12 +58,11 @@
 
 
         .visteRetter {
-            border-bottom: 1px #9a9a9a solid;
-            margin: 15px;
-            padding: 15px;
+            margin: 10px;
+            padding: 10px;
             background-color: rgba(244, 247, 255, 0.38);
             text-align: center;
-            width: 320px;
+            width: 400px;
             border-radius: 5px;
             color: white;
             font-family: 'Montserrat', sans-serif;
@@ -89,7 +84,10 @@
             background-repeat: no-repeat;
             font-family: 'Montserrat', sans-serif;
             background-position: center center;
-
+            border-style: solid;
+            border-width: 5px;
+            border-color: rgba(244, 247, 255, 0.38);
+            border-radius: 5px;
 
         }
 
@@ -111,7 +109,6 @@
             text-align: center;
             height: 300px;
 
-
         }
 
         button {
@@ -121,7 +118,6 @@
             background-color: white;
             margin: 5px;
             font-size: 1.5rem;
-            border: none;
             border-radius: 5px;
 
 
@@ -183,16 +179,15 @@
 
 
         /**********************************************/
-        @media screen and (max-width: 600px) {
 
+
+        @media screen and (max-width: 600px) {
             .menu {
                 display: none;
             }
-
         }
 
         @media screen and (min-width: 500px) {
-
             #burger {
                 display: none;
             }
@@ -206,11 +201,9 @@
                 text-align: center;
                 display: flex;
                 flex-wrap: wrap;
-
-
             }
-
         }
+
 
         /**********************************************/
     </style>
@@ -232,9 +225,6 @@
                 <li><a href="">Desserter</a></li>
                 <li><a href="">Drikkevare</a></li>
                 <li><a href="om.html">Om os</a></li>
-
-
-
             </ul>
         </nav>
     </header>
