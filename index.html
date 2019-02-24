@@ -12,6 +12,9 @@
             margin: 0;
             padding: 0;
             width: 25vw;
+            background-color: rgba(255, 255, 255, 0.53);
+            height: 100vw;
+
         }
 
         li a {
@@ -23,47 +26,18 @@
         }
 
 
-        .section_menu {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            grid-gap: 0px;
-            grid-template-areas: "a b";
+
+        header {
+            background-image: url(imgs/pizza.jpg);
+            background-size: cover;
+            height: 800px;
         }
 
-        .sectionwrapper {
-            grid-area: a;
-            background-image: url(imgs/Wood-Background.jpg);
-
-        }
-
-        .sectionwrapper img {
-            grid-area: b;
-            height: 100vh;
-
-        }
 
         .logo {
-            width: 200px;
-        }
-
-
-
-        @media screen and (max-width: 600px) {
-
-            nav {
-                display: none;
-            }
-
-            .section_menu {
-
-                display: none;
-            }
-
-            body {
-                background-image: url(imgs/Wood-Background.jpg);
-
-            }
-
+            width: 300px;
+            float: right;
+            padding: 30px 30px 30px 30px;
 
 
         }
@@ -77,73 +51,19 @@
 
 
         <div class="section_menu">
-
-
+            <div class="logo">
+                <img src="logo.svg" alt="">
+            </div>
 
             <nav class="sectionwrapper">
-
                 <ul>
-
-
-                    <li>
-
-                        <img src="Asset%201@100x-100.jpg" alt="">
-                    </li>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">About</a></li>
+
                 </ul>
             </nav>
 
-
-            <div id="sectionwrapper">
-
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <img src="splash/background.jpg" style="width:100%" alt="slide">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="splash/2.jpg" style="width:100%" alt="slide">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="splash/3.jpg" style="width:100%" alt="slide">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="splash/4.jpg" style="width:100%" alt="slide">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="splash/5.jpg" style="width:100%" alt="slide">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="splash/6.jpg" style="width:100%" alt="slide">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="splash/7.jpg" style="width:100%" alt="slide">
-                    </div>
-
-                </div>
-
-
-                <div style="text-align:center">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-
-
-                </div>
-
-            </div>
         </div>
     </header>
 
