@@ -20,11 +20,10 @@
 
         li a {
             display: block;
-            padding: 30px 30px 30px 30px;
             text-decoration: none;
             color: white;
             font-size: 2rem;
-             font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
 
@@ -33,7 +32,7 @@
             background-image: url(imgs/pizza2.jpg);
             background-size: cover;
             height: 800px;
-                background-position: center center;
+            background-position: center center;
         }
 
 
@@ -44,25 +43,102 @@
 
 
         }
+
+/**************************BURGERMENU********************************/
+        #menuknap {
+            text-align: left;
+            font-size: 3rem;
+            font-family: 'helvetica', sans-serif;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            margin-left: 10px;
+            margin-top: 8px;
+
+        }
+
+
+        #menu {
+            transition: transform 0.3s;
+            list-style-type: none;
+            transform-origin: top left;
+            background-color: rgba(252, 252, 252, 0.87);
+            width: 300px;
+            text-align: left;
+            padding-bottom: 20px;
+        }
+
+        #burger {
+            width: 200px;
+            z-index: 2;
+        }
+
+        #menu li {
+            padding-top: 30px;
+            display: block;
+            text-align: left;
+        }
+
+
+        #menu a {
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            color: gray;
+
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /**************************MEDIA*******************************/
+
+        @media screen and (min-width: 500px) {
+
+            #burger {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .menu {
+                display: none;
+            }
+
+            .logo {
+                width: 50%;
+            }
+
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <nav id="burger">
 
+            <div id="menuknap">☰</div>
 
+            <ul id="menu" class="hidden">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="menu.html">Menukort</a></li>
+                <li><a href="om.html">Om os</a></li>
+            </ul>
+        </nav>
 
         <div class="section_menu">
-            <div class="logo">
+            <div class="logo" id="hidden">
                 <img src="logo.svg" alt="">
             </div>
 
-            <nav class="sectionwrapper">
+            <nav class="menu">
                 <ul>
                     <li><a href="menu.html">Menu</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Om os</a></li>
+                    <li><a href="om.html">Om os</a></li>
 
                 </ul>
             </nav>
@@ -73,26 +149,20 @@
 
 
     <script>
-        let slideIndex = 0;
-        showSlides();
+        document.querySelector("#menuknap").addEventListener("click", toggleMenu);
 
-        function showSlides() {
-            let i;
-            let slides = document.querySelectorAll(".mySlides");
-            let dots = document.querySelectorAll(".dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+        function toggleMenu() {
+            console.log("Toogle menu");
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+
+            if (erSkjult == true) {
+                document.querySelector("#menuknap").textContent = "☰";
+            } else {
+                document.querySelector("#menuknap").textContent = "X";
             }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
     </script>
 </body>
