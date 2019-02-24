@@ -81,7 +81,9 @@
             position: fixed;
             display: none;
             background-image: url(imgs/Wood-Background.jpg);
+            background-repeat: no-repeat;
             font-family: 'Montserrat', sans-serif;
+            background-position: center center;
 
 
         }
@@ -93,9 +95,13 @@
 
         }
 
+        #luk {
+            float: right;
+        }
+
         #indhold img {
             text-align: center;
-            width: 300px;
+            width: 400px;
 
 
         }
@@ -106,8 +112,9 @@
             padding: 10px;
             background-color: white;
             margin: 5px;
-            font-size: 1rem;
+            font-size: 1.5rem;
             border: none;
+            border-radius: 5px;
 
 
         }
@@ -184,12 +191,12 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 width: 100vw;
-                margin-bottom: 5vw;
-                margin-top: 5vw;
+                margin-bottom: 3vw;
+                margin-top: 3vw;
                 text-align: center;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-between;
+
 
             }
 
@@ -262,7 +269,7 @@
                     <div class="visteRetter">
                            <h2>${ret.navn}</h2>
                             <div> <img src="imgs/${ret.billede}.jpg"> </div>
-                            <p>Pris: ${ret.pris}</p>
+                            <p>${ret.pris}</p>
                     </div>`;
 
                         dest.insertAdjacentHTML("beforeend", template);
@@ -271,7 +278,7 @@
                         function open() {
                             document.querySelector("#indhold").innerHTML =
                                 `<h2>${ret.navn}</h2>
-                            <p>Oprindelse: ${ret.beskrivelse}</p>
+                            <p>${ret.beskrivelse}</p>
                             <div> <img src="imgs/${ret.billede}.jpg"> </div>
                             <p>Pris: ${ret.pris}</p>`;
 
